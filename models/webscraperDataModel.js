@@ -13,10 +13,9 @@ const Schema = mongoose.Schema;
 const WebscraperDataSchema = new Schema({
   url: String,
   wordCount: String,
-//   favourite: String,
+  favourite: Boolean,
   weblinks: [],
   medialinks: String,
-//   actions: String,
 });
 
 export default mongoose.model("webscrapedData",  WebscraperDataSchema);

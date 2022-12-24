@@ -44,11 +44,11 @@ app.post("/send-url", urlencodedparser, async (req, res) => {
         const src = $(this).attr("src");
         // console.log(`The links in webpage is ${src}`);
       });
-      
+      let favourite = false
       webscrapedData.insertMany({ wordCount: wordCount,
         url: url,
         weblinks: hrefLinks,
-        medialinks: link });
+        medialinks: link, favourite });
 
         webscrapedData.find({},(err,webData)=>{
           res.render('index', {
@@ -61,8 +61,6 @@ app.post("/send-url", urlencodedparser, async (req, res) => {
       console.log(err);
     });
 });
-
-
 
 
 
